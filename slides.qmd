@@ -39,7 +39,11 @@ bibliography: references.bib
 
 ## Abstract
 
-Evidence on street networks and their potential changes under future scenarios is crucial for active travel planning. However, most active travel models rely on oversimplified street representations, using single variables like 'quietness', neglecting key factors such as footway widths. This paper introduces new methods for classifying street networks for active travel, integrating diverse datasets from OpenStreetMap and official sources. Implemented in open source software packages `osmactive` and `anime`, these methods are scalable and reproducible. The results are showcased in a web application hosted at www.npt.scot, demonstrating how geographic data science can drive high-impact research.
+Evidence on street networks and their potential changes under future scenarios is crucial for active travel planning.
+However, most active travel models rely on oversimplified street representations, using single variables like 'quietness', neglecting key factors such as footway widths.
+This paper introduces new methods for classifying street networks for active travel, integrating diverse datasets from OpenStreetMap and official sources.
+Implemented in open source software packages `osmactive` and `anime`, these methods are scalable and reproducible.
+The results are showcased in a web application hosted at www.npt.scot, demonstrating how geographic data science can drive high-impact research.
 
 ```         
 network analysis, transport planning, OpenStreetMap, active travel, reproducible research
@@ -47,7 +51,7 @@ network analysis, transport planning, OpenStreetMap, active travel, reproducible
 
 <!-- <iframe src="https://nptscot.github.io/" width="800" height="600"></iframe> -->
 
-
+```{=html}
 <!-- # Introduction
 
 ## Active travel and street networks
@@ -55,42 +59,87 @@ network analysis, transport planning, OpenStreetMap, active travel, reproducible
 -   Active travel is an accessible and cost-effective way to replace short car trips and make transport systems more sustainable.
 -   Most active travel models rely on oversimplified street representations, neglecting key factors such as footway widths.
 -   Need for new methods for classifying street networks for active travel, integrating diverse datasets. -->
+```
 
 ## Network Planning Tool (NPT) for Scotland
 
+Web app deployed at [npt.scot](https://www.npt.scot) for cycle network planning in Scotland.
+
 ![](images/paste-1-2.png)
 
-::: {.notes}
-
+::: notes
 -   New web-based strategic network planning tool that estimates cycling potential down to the street level.
 -   Builds on the functionality of the Propensity to Cycle Tool (PCT) and related tools.
 -   Funded by Transport Scotland and developed by the University of Leeds in collaboration with Sustrans Scotland.
--   Open-source and hosted at [github.come/nptscot](https://github.com/nptscot).
-
+-   Open-source and hosted at [github.com/nptscot](https://github.com/nptscot).
 :::
 
-## Key features of NPT
+## Cycling by Design
 
+The bible of Scottish cycling infrastructure planning.
+
+<!-- https://www.transport.gov.scot/media/50323/cycling-by-design-update-2019-final-document-15-september-2021-1.pdf -->
+Available at [transport.gov.scot](https://www.transport.gov.scot/media/50323/cycling-by-design-update-2019-final-document-15-september-2021-1.pdf).
+
+![](images/paste-2.png)
+
+## Key features of the NPT
+
+-   Funded by Transport Scotland to support £millions of investment in active travel.
+-   Developed by the University of Leeds in collaboration with Sustrans Scotland.
+-   Open-source and hosted at [github.com/nptscot](https://github.com/nptscot).
 -   Integration of multiple layers into a single tool.
 -   Overcoming limitations of previous strategic network planning tools.
 -   Brings together more than a dozen datasets, including Ordnance Survey Mastermap and OpenStreetmap data products.
 -   Presents new geographic methods developed to support this work.
 -   Uses `osmactive` R package and `anime` Rust crate.
 
+## Key technical challenges
+
+- Integrating multiple datasets into a single tool.
+- Network joins
+
+```{mermaid}
+graph TD
+  OS_OpenRoads[OS OpenRoads (Visualisation Layer)]
+  OS_MasterMap_Topo[OS MasterMap Topo (Pavement Widths)]
+  OS_MasterMap_Highways[OS MasterMap Highways (Highway Widths)]
+  OSM[OpenStreetMap (Max Speed, Cycle Infrastructure, Highway Type)]
+
+  OS_MasterMap_Topo --> OS_OpenRoads
+  OS_MasterMap_Highways --> OS_OpenRoads
+  OSM --> OS_OpenRoads
+```
+
 # Datasets and methods
 
 ## Datasets
 
--   Ordnance Survey OpenRoads
--   OS MasterMap Highways
--   OS Mastermap Topography
--   OpenStreetMap
+-   **<span style="color:darkblue;">Ordnance Survey OpenRoads</span>**
+-   **<span style="color:darkblue;">OS MasterMap Highways</span>**
+-   **<span style="color:darkblue;">OS Mastermap Topography</span>**
+-   **<span style="color:darkblue;">OpenStreetMap</span>**
+- NRS (National Records of Scotland) data on travel to school
+- NRS data on travel to work (Data Zone level)
+- Scottish Household Survey (SHS) data
+- National Travel Survey (NTS) data
+- Data from spatial interaction models (SIMs)
 
-## Methods
+## Software
+
+Code is available and maintained at [github.com/nptscot](https://github.com/nptscot)
+
+-   Backend written in R
+-   Frontend of NPT web application written in 'vanilla' JavaScript
+-   NPW (Network Planning Workspace) web application written in Rust and Svelte
+  - See [nptscot.github.io/npw](https://nptscot.github.io/npw/)
 
 -   `mastermapr` R package for importing MasterMap datasets
 -   `osmactive` R package for classifying OSM data
 -   `anime` Rust crate for network integration
+
+## Key functions
+
 -   `get_pavement_widths()` function to calculate pavement widths
 -   `get_bus_routes()` function to determine bus lanes
 -   `classify_cycle_infrastructure()` function to classify cycle infrastructure
