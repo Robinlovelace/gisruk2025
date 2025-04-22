@@ -33,6 +33,4 @@ bibliography: references.bib
 format: html
 ---
 
-# Introduction
-
-This is a placeholder for the paper content, which will be based on gisruk2025.Rmd.
+See the [pdf version](https://github.com/nptscot/osmactive/releases/download/v0.1/gisruk2025.pdf) and [html version](https://nptscot.github.io/osmactive/articles/gisruk2025.html) at [nptscot.github.io/osmactive](https://nptscot.github.io/osmactive/articles/gisruk2025.html).
