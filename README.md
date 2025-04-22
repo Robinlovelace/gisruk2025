@@ -1,3 +1,9 @@
+Reproducible slides for my presentation at GISRUK 2025.
+
+See below for details on how this was set-up.
+
+<details>
+
 # reproducible-slides-repo-template
 
 Flexible repo template for reproducible slides with Quarto and continuous deployment via GitHub actions

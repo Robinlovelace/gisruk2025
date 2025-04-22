@@ -96,20 +96,68 @@ Available at [transport.gov.scot](https://www.transport.gov.scot/media/50323/cyc
 
 ## Key technical challenges
 
+```{mermaid}
+graph TD
+  subgraph data_sources ["Data Sources"]
+    direction TB
+    OS_MasterMap_Topo["OS MasterMap Topo"]
+    OS_MasterMap_Highways_Source["OS MasterMap Highways"]
+    OSM_Source["OpenStreetMap"]
+  end
+
+  subgraph processing_integration ["Processing & Integration"]
+    direction TB
+    Pavement_Polygons["Pavement polygons"]
+    Pavement_Widths["Pavement widths"]
+    Highway_Widths["Highway widths, Hierarchy, .."]
+    OSM_Derived["Max Speed, Type, ..."]
+  end
+
+  subgraph output_layer ["Output Layer"]
+    direction TB
+    OSM_Los["Level of Service layer"]
+    OS_OpenRoads["Streetspace layer"]
+
+  end
+
+  OS_MasterMap_Topo --> Pavement_Polygons
+  Pavement_Polygons --> Pavement_Widths
+  OS_MasterMap_Highways_Source --> Highway_Widths
+  OSM_Source --> OSM_Derived
+  Highway_Widths --> OSM_Los
+
+  Pavement_Widths --> OS_OpenRoads
+  Highway_Widths --> OS_OpenRoads
+  OSM_Derived --> OS_OpenRoads
+  OSM_Derived --> OSM_Los
+
+
+  style data_sources fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000
+  style processing_integration fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000
+  style output_layer fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000
+
+  %% Style definitions for better colors
+  style OS_MasterMap_Topo fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+  style OS_MasterMap_Highways_Source fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+  style OSM_Source fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+
+  style Pavement_Polygons fill:#ccf,stroke:#333,stroke-width:2px,color:#000
+  style Pavement_Widths fill:#ccf,stroke:#333,stroke-width:2px,color:#000
+  style Highway_Widths fill:#ccf,stroke:#333,stroke-width:2px,color:#000
+  style OSM_Derived fill:#ccf,stroke:#333,stroke-width:2px,color:#000
+
+  style OS_OpenRoads fill:#9cf,stroke:#333,stroke-width:2px,color:#000
+
+  %% Style definition for the main graph background
+  classDef default fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000
+```
+
+::: {.notes}
+
 - Integrating multiple datasets into a single tool.
 - Network joins
 
-```{mermaid}
-graph TD
-  OS_OpenRoads[OS OpenRoads (Visualisation Layer)]
-  OS_MasterMap_Topo[OS MasterMap Topo (Pavement Widths)]
-  OS_MasterMap_Highways[OS MasterMap Highways (Highway Widths)]
-  OSM[OpenStreetMap (Max Speed, Cycle Infrastructure, Highway Type)]
-
-  OS_MasterMap_Topo --> OS_OpenRoads
-  OS_MasterMap_Highways --> OS_OpenRoads
-  OSM --> OS_OpenRoads
-```
+:::
 
 # Datasets and methods
 
