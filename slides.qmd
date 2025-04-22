@@ -4,6 +4,7 @@ subtitle: GISRUK 2025
 format: 
   clean-revealjs:
     self-contained: true
+preload-iframes: true
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -35,7 +36,33 @@ author:
     orcid: 0000-0002-5642-6006
 date: last-modified
 bibliography: references.bib
+execute: 
+  echo: false
 ---
+
+````{=html}
+<!-- ```bash
+#| eval: false
+# Check screenshots on Ubuntu
+ls -l /home/robin/Videos/Screencasts/
+
+
+
+ls -l ~/Videos/Screencasts/
+ffmpeg -i '/home/robin/Videos/Screencasts/Screencast from 2025-04-22 21-44-47.webm' -vf "fps=10,scale=800:-1:flags=lanczos" -c:v gif images/screencast-clos.gif
+# copy the webm to clos-demo/
+cp '/home/robin/Videos/Screencasts/Screencast from 2025-04-22 21-44-47.webm' clos-demo/clos-demo.webm
+cp -Rv ~/Downloads/colored-particles colored-particles
+``` -->
+````
+
+```{r}
+#| eval: false
+f = fs::dir_ls("~/Videos/Screencasts/", regexp = "2025-04-22")
+
+```
+
+<!-- # Introduction {background-iframe="clos-demo/index.html"} -->
 
 ## Abstract
 
@@ -61,6 +88,8 @@ network analysis, transport planning, OpenStreetMap, active travel, reproducible
 -   Need for new methods for classifying street networks for active travel, integrating diverse datasets. -->
 ```
 
+# Introduction
+
 ## Network Planning Tool (NPT) for Scotland
 
 Web app deployed at [npt.scot](https://www.npt.scot) for cycle network planning in Scotland.
@@ -79,6 +108,7 @@ Web app deployed at [npt.scot](https://www.npt.scot) for cycle network planning 
 The bible of Scottish cycling infrastructure planning.
 
 <!-- https://www.transport.gov.scot/media/50323/cycling-by-design-update-2019-final-document-15-september-2021-1.pdf -->
+
 Available at [transport.gov.scot](https://www.transport.gov.scot/media/50323/cycling-by-design-update-2019-final-document-15-september-2021-1.pdf).
 
 ![](images/paste-2.png)
@@ -93,6 +123,14 @@ Available at [transport.gov.scot](https://www.transport.gov.scot/media/50323/cyc
 -   Brings together more than a dozen datasets, including Ordnance Survey Mastermap and OpenStreetmap data products.
 -   Presents new geographic methods developed to support this work.
 -   Uses `osmactive` R package and `anime` Rust crate.
+
+# Existing cycle network quality layer {background-image="images/screencast-clos.gif"}
+
+# Streetspace layer
+
+See live demo at [npt.scot](https://www.npt.scot).
+
+![](images/paste-3.png)
 
 ## Key technical challenges
 
@@ -152,50 +190,87 @@ graph TD
   classDef default fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000
 ```
 
-::: {.notes}
-
-- Integrating multiple datasets into a single tool.
-- Network joins
-
+::: notes
+-   Integrating multiple datasets into a single tool.
+-   Network joins
 :::
 
 # Datasets and methods
 
 ## Datasets
 
--   **<span style="color:darkblue;">Ordnance Survey OpenRoads</span>**
--   **<span style="color:darkblue;">OS MasterMap Highways</span>**
--   **<span style="color:darkblue;">OS Mastermap Topography</span>**
--   **<span style="color:darkblue;">OpenStreetMap</span>**
-- NRS (National Records of Scotland) data on travel to school
-- NRS data on travel to work (Data Zone level)
-- Scottish Household Survey (SHS) data
-- National Travel Survey (NTS) data
-- Data from spatial interaction models (SIMs)
+-   [**Ordnance Survey OpenRoads**]{style="color:darkblue;"}
+-   [**OS MasterMap Highways**]{style="color:darkblue;"}
+-   [**OS Mastermap Topography**]{style="color:darkblue;"}
+-   [**OpenStreetMap**]{style="color:darkblue;"}
+-   NRS (National Records of Scotland) data on travel to school
+-   NRS data on travel to work (Data Zone level)
+-   Scottish Household Survey (SHS) data
+-   National Travel Survey (NTS) data
+-   Data from spatial interaction models (SIMs)
 
 ## Software
 
 Code is available and maintained at [github.com/nptscot](https://github.com/nptscot)
 
 -   Backend written in R
+
 -   Frontend of NPT web application written in 'vanilla' JavaScript
+
 -   NPW (Network Planning Workspace) web application written in Rust and Svelte
-  - See [nptscot.github.io/npw](https://nptscot.github.io/npw/)
+
+-   See [nptscot.github.io/npw](https://nptscot.github.io/npw/)
 
 -   `mastermapr` R package for importing MasterMap datasets
+
 -   `osmactive` R package for classifying OSM data
+
 -   `anime` Rust crate for network integration
 
 ## Key functions
 
+-   Functions including `get_travel_network()` and `classify_cycle_infrastructure()` from the `osmactive` package.
+-   Classify cycle infrastructure types based on the presence of cycle lanes, tracks, and other features.
+-   `distance_to_road()` function to calculate distances to roads.
 -   `get_pavement_widths()` function to calculate pavement widths
 -   `get_bus_routes()` function to determine bus lanes
 -   `classify_cycle_infrastructure()` function to classify cycle infrastructure
 
-## Classifying OpenStreetNetwork ways
+## Live demo
 
--   Functions including `get_travel_network()` and `classify_cycle_infrastructure()` from the `osmactive` package.
--   Classify cycle infrastructure types based on the presence of cycle lanes, tracks, and other features.
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| include: false
+#| eval: false
+library(dplyr)
+library(osmactive)
+library(tmap)
+```
+
+```{r}
+#| label: bristol
+#| eval: false
+#| echo: true
+remotes::install_github("nptscot/osmactive")
+osm = get_travel_network("bristol")
+cycle_net = get_cycling_network(osm)
+drive_net = get_driving_network(osm)
+cycle_net = distance_to_road(cycle_net, drive_net)
+cycle_net = classify_cycle_infrastructure(cycle_net)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: plot
+#| eval: false
+plot_osm_tmap(cycle_net)
+```
+:::
+:::::
+
+![](images/paste-4.png)
 
 ## Road width measurements
 
@@ -244,5 +319,3 @@ Code is available and maintained at [github.com/nptscot](https://github.com/npts
 -   Improve NPT by incorporating new datasets.
 -   Develop context-specific classifications in `osmactive` package.
 -   Support roll-out of methods in new places.
-
-# References
