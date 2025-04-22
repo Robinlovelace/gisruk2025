@@ -1,1 +1,38 @@
-This is a placeholder for a paper.
+---
+title: "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning"
+author: 
+  - name: Robin Lovelace
+    affiliation: Leeds Institute for Transport Studies, University of Leeds, UK
+    orcid: 0000-0001-5679-6536
+  - name: Zhao Wang
+    affiliation: Leeds Institute for Transport Studies, University of Leeds, UK
+    orcid: 0000-0002-4054-0533
+  - name: Hussein Mahfouz
+    affiliation: Leeds Institute for Transport Studies, University of Leeds, UK
+    orcid: 0000-0002-6043-8616
+  - name: Juan Pablo Fonseca Zamora
+    affiliation: Leeds Institute for Transport Studies, University of Leeds, UK
+    orcid: 0009-0006-7042-3828
+  - name: Angus Calder
+    affiliation: Sustrans Scotland
+  - name: Martin Lucas-Smith
+    affiliation: CycleStreets Ltd, Cambridge, UK
+  - name: Dustin Carlino
+    affiliation: Alan Turing Institute, London, UK
+    orcid: 0000-0002-5565-0989
+  - name: Josiah Parry
+    affiliation: Environmental Systems Research Institute (Esri), Redlands, CA, USA 
+    orcid: 0000-0001-9910-865X
+  - name: Rosa Félix
+    affiliation: University of Lisbon
+    orcid: 0000-0002-5642-6006
+abstract: |
+  Evidence on street networks and their potential changes under future scenarios is crucial for active travel planning. However, most active travel models rely on oversimplified street representations, using single variables like 'quietness', neglecting key factors such as footway widths. This paper introduces new methods for classifying street networks for active travel, integrating diverse datasets from OpenStreetMap and official sources. Implemented in open source software packages `osmactive` and `anime`, these methods are scalable and reproducible. The results are showcased in a web application hosted at www.npt.scot, demonstrating how geographic data science can drive high-impact research.
+keywords: [network analysis, transport planning, OpenStreetMap, active travel, reproducible research]
+bibliography: references.bib
+format: html
+---
+
+# Introduction
+
+This is a placeholder for the paper content, which will be based on gisruk2025.Rmd.

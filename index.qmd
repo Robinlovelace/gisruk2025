@@ -1,9 +1,9 @@
 ---
-title: Reproducible slides with Quarto and continuous deployment via GitHub actions
+title: GISRUK 2025 Presentation
 ---
 
-The materials here support a talk at the [Spatial Data Science across Languages (SDSL)](https://spatial-data-science.github.io/2024/) conference 2024.
+Welcome to the website for slides for my talk at GISRUK 2025.
 
 See the [slides here](slides) and in the dropdown menu above.
 
-See the source code at [github.com/robinlovelace](https://github.com/Robinlovelace/reproducible-slides-repo-template).
+This website was created using Quarto.

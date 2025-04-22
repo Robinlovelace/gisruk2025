@@ -1,11 +1,12 @@
 project:
   type: website
+  title: "GISRUK 2025 Presentation"
   render:
     - index.qmd 
     - slides.qmd
     - paper.qmd
-
 website:
+  description: "Website with slides for my talk at GISRUK 2025"
   navbar:
     background: primary
     search: true
@@ -15,4 +16,4 @@ website:
       - text: "Slides"
         href: slides.qmd
       # - text: "Paper"
-      #   href: paper.qmd 
+      #   href: paper.qmd

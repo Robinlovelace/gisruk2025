@@ -2,71 +2,197 @@
   {
     "objectID": "slides.html#why-make-a-presentation-with-quarto-and-continuous-deployment",
     "href": "slides.html#why-make-a-presentation-with-quarto-and-continuous-deployment",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Why make a presentation with Quarto and continuous deployment?",
     "text": "Why make a presentation with Quarto and continuous deployment?\n\nAllows you to test ideas in a standalone environment\nSharing materials with collaborators and the audience\nContinuous deployment automates the process of updating the slides and ensures reproducibility"
   },
   {
     "objectID": "slides.html#how-to-get-started",
     "href": "slides.html#how-to-get-started",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "How to get started?",
     "text": "How to get started?\n\nCheck out the Quarto documentation\n\nEspecially the Publishing section\n\nYou can use this repository as a template for your own slides, go to https://github.com/Robinlovelace/reproducible-slides-repo-template and clone it\nNote: the approach here is to publish the slides as part of a Quarto website project so it can be used for other purposes too, e.g. if you want to write a paper building on the slides"
   },
   {
     "objectID": "slides.html#extensions",
     "href": "slides.html#extensions",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Extensions",
     "text": "Extensions\nAdd extensions with the following code (which adds the clean-revealjs extension, for example, which has a detailed demo hosted at github.com/grantmcdermott/quarto-revealjs-clean-demo):\nquarto install extension grantmcdermott/quarto-revealjs-clean\nThen replace:\nformat: \n  revealjs: default\nwith:\nformat: \n  clean-revealjs:\n    self-contained: true\nIn the YAML header of your .qmd file."
   },
   {
     "objectID": "slides.html#setting-up-gh-pages-branch",
     "href": "slides.html#setting-up-gh-pages-branch",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Setting-up gh-pages branch",
     "text": "Setting-up gh-pages branch\nYou can do this with a single quarto command:\nquarto publish gh-pages\nWhich leads to the following text and eventually auto-opens the deployed webiste!"
   },
   {
     "objectID": "slides.html#the-website",
     "href": "slides.html#the-website",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "The website",
     "text": "The website\nThe previous command creates a gh-pages branch with the slides in the docs folder. This is then automatically deployed to GitHub Pages, and the website is opened in your browser when ready:\n\nHow awesome is that?\n🤯🤯🤯"
   },
   {
     "objectID": "slides.html#debugging",
     "href": "slides.html#debugging",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Debugging",
     "text": "Debugging\nSource of quarto publish gh-pages hint: Error message from GitHub Actions when trying to publish slides to GitHub Pages:\nERROR: Unable to publish to GitHub Pages (the remote origin does not have a branch named \"gh-pages\". Use first `quarto publish gh-pages` locally to initialize the remote repository for publishing.)"
   },
   {
     "objectID": "slides.html#with-the-quarto-extension",
     "href": "slides.html#with-the-quarto-extension",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "With the Quarto extension",
     "text": "With the Quarto extension\n\nYou need to be in Visual Editor mode (Ctrl+Shift+F4)\nThen it’s Ctrl+Shift+F8\n\n\nCreates citations like this: (Peng 2011)"
   },
   {
     "objectID": "slides.html#with-citation-picker-for-zotero-extension",
     "href": "slides.html#with-citation-picker-for-zotero-extension",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "With “Citation Picker for Zotero” extension",
     "text": "With “Citation Picker for Zotero” extension\n\nIssue with this approach: doesn’t generate the .bib file\n\n\nAlt+Shift+Z"
   },
   {
     "objectID": "paper.html",
     "href": "paper.html",
-    "title": "",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "",
-    "text": "This is a placeholder for a paper."
+    "text": "Introduction\nThis is a placeholder for the paper content, which will be based on gisruk2025.Rmd."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "title": "GISRUK 2025 Presentation",
     "section": "",
-    "text": "The materials here support a talk at the Spatial Data Science across Languages (SDSL) conference 2024.\nSee the slides here and in the dropdown menu above.\nSee the source code at github.com/robinlovelace."
+    "text": "Welcome to the website for slides for my talk at GISRUK 2025.\nSee the slides here and in the dropdown menu above.\nThis website was created using Quarto."
+  },
+  {
+    "objectID": "slides.html#title",
+    "href": "slides.html#title",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Title",
+    "text": "Title\nMapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning"
+  },
+  {
+    "objectID": "slides.html#authors",
+    "href": "slides.html#authors",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Authors",
+    "text": "Authors\nRobin Lovelace, Zhao Wang, Hussein Mahfouz, Juan Pablo Fonseca Zamora, Angus Calder, Martin Lucas-Smith, Dustin Carlino, Josiah Parry, Rosa Félix"
+  },
+  {
+    "objectID": "slides.html#abstract",
+    "href": "slides.html#abstract",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Abstract",
+    "text": "Abstract\nEvidence on street networks and their potential changes under future scenarios is crucial for active travel planning. However, most active travel models rely on oversimplified street representations, using single variables like ‘quietness’, neglecting key factors such as footway widths. This paper introduces new methods for classifying street networks for active travel, integrating diverse datasets from OpenStreetMap and official sources. Implemented in open source software packages osmactive and anime, these methods are scalable and reproducible. The results are showcased in a web application hosted at www.npt.scot, demonstrating how geographic data science can drive high-impact research."
+  },
+  {
+    "objectID": "slides.html#keywords",
+    "href": "slides.html#keywords",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Keywords",
+    "text": "Keywords\nnetwork analysis, transport planning, OpenStreetMap, active travel, reproducible research"
+  },
+  {
+    "objectID": "slides.html#active-travel-and-street-networks",
+    "href": "slides.html#active-travel-and-street-networks",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Active travel and street networks",
+    "text": "Active travel and street networks\n\nActive travel is an accessible and cost-effective way to replace short car trips and make transport systems more sustainable.\nMost active travel models rely on oversimplified street representations, neglecting key factors such as footway widths.\nNeed for new methods for classifying street networks for active travel, integrating diverse datasets."
+  },
+  {
+    "objectID": "slides.html#network-planning-tool-npt-for-scotland",
+    "href": "slides.html#network-planning-tool-npt-for-scotland",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Network Planning Tool (NPT) for Scotland",
+    "text": "Network Planning Tool (NPT) for Scotland\n\nNew web-based strategic network planning tool that estimates cycling potential down to the street level.\nBuilds on the functionality of the Propensity to Cycle Tool (PCT) and related tools.\nFunded by Transport Scotland and developed by the University of Leeds in collaboration with Sustrans Scotland.\nOpen-source and hosted at github.come/nptscot."
+  },
+  {
+    "objectID": "slides.html#key-features-of-npt",
+    "href": "slides.html#key-features-of-npt",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Key features of NPT",
+    "text": "Key features of NPT\n\nIntegration of multiple layers into a single tool.\nOvercoming limitations of previous strategic network planning tools.\nBrings together more than a dozen datasets, including Ordnance Survey Mastermap and OpenStreetmap data products.\nPresents new geographic methods developed to support this work.\nUses osmactive R package and anime Rust crate."
+  },
+  {
+    "objectID": "slides.html#datasets-and-methods",
+    "href": "slides.html#datasets-and-methods",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Datasets and methods",
+    "text": "Datasets and methods\n\nCheck out the Quarto documentation\n\nEspecially the Publishing section\n\nYou can use this repository as a template for your own slides, go to https://github.com/Robinlovelace/reproducible-slides-repo-template and clone it\nNote: the approach here is to publish the slides as part of a Quarto website project so it can be used for other purposes too, e.g. if you want to write a paper building on the slides"
+  },
+  {
+    "objectID": "slides.html#datasets",
+    "href": "slides.html#datasets",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Datasets",
+    "text": "Datasets\n\nOrdnance Survey OpenRoads\nOS MasterMap Highways\nOS Mastermap Topography\nOpenStreetMap"
+  },
+  {
+    "objectID": "slides.html#methods",
+    "href": "slides.html#methods",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Methods",
+    "text": "Methods\n\nmastermapr R package for importing MasterMap datasets\nosmactive R package for classifying OSM data\nanime Rust crate for network integration\nget_pavement_widths() function to calculate pavement widths\nget_bus_routes() function to determine bus lanes\nclassify_cycle_infrastructure() function to classify cycle infrastructure"
+  },
+  {
+    "objectID": "slides.html#classifying-openstreetnetwork-ways",
+    "href": "slides.html#classifying-openstreetnetwork-ways",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Classifying OpenStreetNetwork ways",
+    "text": "Classifying OpenStreetNetwork ways\n\nFunctions including get_travel_network() and classify_cycle_infrastructure() from the osmactive package.\nClassify cycle infrastructure types based on the presence of cycle lanes, tracks, and other features."
+  },
+  {
+    "objectID": "slides.html#road-width-measurements",
+    "href": "slides.html#road-width-measurements",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Road width measurements",
+    "text": "Road width measurements\n\nCarriageway width and corridor width are key measurements.\nCarriageway width determines if infrastructure can fit within the carriageway.\nCorridor width captures carriageway plus roadside features.\nget_pavement_widths() function in osmactive package."
+  },
+  {
+    "objectID": "slides.html#minimum-cycle-track-and-buffer-widths",
+    "href": "slides.html#minimum-cycle-track-and-buffer-widths",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Minimum cycle track and buffer widths",
+    "text": "Minimum cycle track and buffer widths\n\nCorridor width determines if footway can be reallocated for cycle infrastructure.\nCycling by Design (CbD) guidance on widths and buffers.\nSpeed limit data from OSM used for buffer widths."
+  },
+  {
+    "objectID": "slides.html#bus-routes-and-road-traffic-assumptions",
+    "href": "slides.html#bus-routes-and-road-traffic-assumptions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Bus routes and road traffic assumptions",
+    "text": "Bus routes and road traffic assumptions\n\nMinimum space requirements for motor traffic depend on bus routes and lanes.\nActive Travel England cross section check tool.\nget_bus_routes() function in osmactive package."
+  },
+  {
+    "objectID": "slides.html#network-planning-tool-for-scotland",
+    "href": "slides.html#network-planning-tool-for-scotland",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Network Planning Tool for Scotland",
+    "text": "Network Planning Tool for Scotland\n\nWeb application for strategic cycle network planning.\nKey components:\n\nRoute network layer\nInfrastructure and traffic layer\nStreet space layer\nCore network layer\nNetwork Planning Workspace (NPW) web application (https://nptscot.github.io/npw/)"
+  },
+  {
+    "objectID": "slides.html#street-space-layer",
+    "href": "slides.html#street-space-layer",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Street space layer",
+    "text": "Street space layer\n\nCategorises roads in accordance with Cycling by Design guidance.\nMethodology for classifying road spaces and cycle infrastructure."
+  },
+  {
+    "objectID": "slides.html#conclusion",
+    "href": "slides.html#conclusion",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nNPT is a cutting-edge web application for strategic cycle network planning.\nUnique feature: integration of multiple layers.\nNew street space layer: step change in access to combined carriageway and corridor widths."
+  },
+  {
+    "objectID": "slides.html#future-work",
+    "href": "slides.html#future-work",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Future work",
+    "text": "Future work\n\nImprove NPT by incorporating new datasets.\nDevelop context-specific classifications in osmactive package.\nSupport roll-out of methods in new places."
   }
 ]
