@@ -2,9 +2,8 @@
 title: "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning"
 subtitle: GISRUK 2025
 format: 
-  revealjs: default
-  # clean-revealjs:
-  #   self-contained: true
+  clean-revealjs:
+    self-contained: true
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
