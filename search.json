@@ -46,7 +46,7 @@
     "href": "slides.html#key-technical-challenges",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Key technical challenges",
-    "text": "Key technical challenges\n\nIntegrating multiple datasets into a single tool.\nNetwork joins\n\n\n\n\n\n\ngraph TD\n  OS_OpenRoads[OS OpenRoads (Visualisation Layer)]\n  OS_MasterMap_Topo[OS MasterMap Topo (Pavement Widths)]\n  OS_MasterMap_Highways[OS MasterMap Highways (Highway Widths)]\n  OSM[OpenStreetMap (Max Speed, Cycle Infrastructure, Highway Type)]\n\n  OS_MasterMap_Topo --&gt; OS_OpenRoads\n  OS_MasterMap_Highways --&gt; OS_OpenRoads\n  OSM --&gt; OS_OpenRoads"
+    "text": "Key technical challenges\n\n\n\n\n\ngraph TD\n  subgraph data_sources [\"Data Sources\"]\n    direction TB\n    OS_MasterMap_Topo[\"OS MasterMap Topo\"]\n    OS_MasterMap_Highways_Source[\"OS MasterMap Highways\"]\n    OSM_Source[\"OpenStreetMap\"]\n  end\n\n  subgraph processing_integration [\"Processing & Integration\"]\n    direction TB\n    Pavement_Polygons[\"Pavement polygons\"]\n    Pavement_Widths[\"Pavement widths\"]\n    Highway_Widths[\"Highway widths, Hierarchy, ..\"]\n    OSM_Derived[\"Max Speed, Type, ...\"]\n  end\n\n  subgraph output_layer [\"Output Layer\"]\n    direction TB\n    OSM_Los[\"Level of Service layer\"]\n    OS_OpenRoads[\"Streetspace layer\"]\n\n  end\n\n  OS_MasterMap_Topo --&gt; Pavement_Polygons\n  Pavement_Polygons --&gt; Pavement_Widths\n  OS_MasterMap_Highways_Source --&gt; Highway_Widths\n  OSM_Source --&gt; OSM_Derived\n  Highway_Widths --&gt; OSM_Los\n\n  Pavement_Widths --&gt; OS_OpenRoads\n  Highway_Widths --&gt; OS_OpenRoads\n  OSM_Derived --&gt; OS_OpenRoads\n  OSM_Derived --&gt; OSM_Los\n\n\n  style data_sources fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000\n  style processing_integration fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000\n  style output_layer fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000\n\n  %% Style definitions for better colors\n  style OS_MasterMap_Topo fill:#f9f,stroke:#333,stroke-width:2px,color:#000\n  style OS_MasterMap_Highways_Source fill:#f9f,stroke:#333,stroke-width:2px,color:#000\n  style OSM_Source fill:#f9f,stroke:#333,stroke-width:2px,color:#000\n\n  style Pavement_Polygons fill:#ccf,stroke:#333,stroke-width:2px,color:#000\n  style Pavement_Widths fill:#ccf,stroke:#333,stroke-width:2px,color:#000\n  style Highway_Widths fill:#ccf,stroke:#333,stroke-width:2px,color:#000\n  style OSM_Derived fill:#ccf,stroke:#333,stroke-width:2px,color:#000\n\n  style OS_OpenRoads fill:#9cf,stroke:#333,stroke-width:2px,color:#000\n\n  %% Style definition for the main graph background\n  classDef default fill:#f0f0f0,stroke:#333,stroke-width:2px,color:#000\n\n\n\n\n\n\n\n\nIntegrating multiple datasets into a single tool.\nNetwork joins"
   },
   {
     "objectID": "slides.html#datasets",
@@ -67,14 +67,14 @@
     "href": "slides.html#key-functions",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Key functions",
-    "text": "Key functions\n\nget_pavement_widths() function to calculate pavement widths\nget_bus_routes() function to determine bus lanes\nclassify_cycle_infrastructure() function to classify cycle infrastructure"
+    "text": "Key functions\n\nFunctions including get_travel_network() and classify_cycle_infrastructure() from the osmactive package.\nClassify cycle infrastructure types based on the presence of cycle lanes, tracks, and other features.\ndistance_to_road() function to calculate distances to roads.\nget_pavement_widths() function to calculate pavement widths\nget_bus_routes() function to determine bus lanes\nclassify_cycle_infrastructure() function to classify cycle infrastructure"
   },
   {
-    "objectID": "slides.html#classifying-openstreetnetwork-ways",
-    "href": "slides.html#classifying-openstreetnetwork-ways",
+    "objectID": "slides.html#live-demo",
+    "href": "slides.html#live-demo",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Classifying OpenStreetNetwork ways",
-    "text": "Classifying OpenStreetNetwork ways\n\nFunctions including get_travel_network() and classify_cycle_infrastructure() from the osmactive package.\nClassify cycle infrastructure types based on the presence of cycle lanes, tracks, and other features."
+    "section": "Live demo",
+    "text": "Live demo\n\n\n\nremotes::install_github(\"nptscot/osmactive\")\nosm = get_travel_network(\"bristol\")\ncycle_net = get_cycling_network(osm)\ndrive_net = get_driving_network(osm)\ncycle_net = distance_to_road(cycle_net, drive_net)\ncycle_net = classify_cycle_infrastructure(cycle_net)"
   },
   {
     "objectID": "slides.html#road-width-measurements",
