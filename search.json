@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "paper.html",
+    "href": "paper.html",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "",
+    "text": "See the pdf version and html version at nptscot.github.io/osmactive."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GISRUK 2025 Presentation",
+    "section": "",
+    "text": "Welcome to the website for slides for my talk at GISRUK 2025.\nSee the slides here and in the dropdown menu above.\nThis website was created using Quarto."
+  },
+  {
+    "objectID": "slides.html#abstract",
+    "href": "slides.html#abstract",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Abstract",
+    "text": "Abstract\nEvidence on street networks and their potential changes under future scenarios is crucial for active travel planning. However, most active travel models rely on oversimplified street representations, using single variables like ‘quietness’, neglecting key factors such as footway widths. This paper introduces new methods for classifying street networks for active travel, integrating diverse datasets from OpenStreetMap and official sources. Implemented in open source software packages osmactive and anime, these methods are scalable and reproducible. The results are showcased in a web application hosted at www.npt.scot, demonstrating how geographic data science can drive high-impact research.\nnetwork analysis, transport planning, OpenStreetMap, active travel, reproducible research"
+  },
+  {
+    "objectID": "slides.html#network-planning-tool-npt-for-scotland",
+    "href": "slides.html#network-planning-tool-npt-for-scotland",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Network Planning Tool (NPT) for Scotland",
+    "text": "Network Planning Tool (NPT) for Scotland\nWeb app deployed at npt.scot for cycle network planning in Scotland.\n\n\n\nNew web-based strategic network planning tool that estimates cycling potential down to the street level.\nBuilds on the functionality of the Propensity to Cycle Tool (PCT) and related tools.\nFunded by Transport Scotland and developed by the University of Leeds in collaboration with Sustrans Scotland.\nOpen-source and hosted at github.com/nptscot."
+  },
+  {
+    "objectID": "slides.html#cycling-by-design",
+    "href": "slides.html#cycling-by-design",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Cycling by Design",
+    "text": "Cycling by Design\nThe bible of Scottish cycling infrastructure planning.\n\nAvailable at transport.gov.scot."
+  },
+  {
+    "objectID": "slides.html#key-features-of-the-npt",
+    "href": "slides.html#key-features-of-the-npt",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Key features of the NPT",
+    "text": "Key features of the NPT\n\nFunded by Transport Scotland to support £millions of investment in active travel.\nDeveloped by the University of Leeds in collaboration with Sustrans Scotland.\nOpen-source and hosted at github.com/nptscot.\nIntegration of multiple layers into a single tool.\nOvercoming limitations of previous strategic network planning tools.\nBrings together more than a dozen datasets, including Ordnance Survey Mastermap and OpenStreetmap data products.\nPresents new geographic methods developed to support this work.\nUses osmactive R package and anime Rust crate."
+  },
+  {
+    "objectID": "slides.html#key-technical-challenges",
+    "href": "slides.html#key-technical-challenges",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Key technical challenges",
+    "text": "Key technical challenges\n\nIntegrating multiple datasets into a single tool.\nNetwork joins\n\n\n\n\n\n\ngraph TD\n  OS_OpenRoads[OS OpenRoads (Visualisation Layer)]\n  OS_MasterMap_Topo[OS MasterMap Topo (Pavement Widths)]\n  OS_MasterMap_Highways[OS MasterMap Highways (Highway Widths)]\n  OSM[OpenStreetMap (Max Speed, Cycle Infrastructure, Highway Type)]\n\n  OS_MasterMap_Topo --&gt; OS_OpenRoads\n  OS_MasterMap_Highways --&gt; OS_OpenRoads\n  OSM --&gt; OS_OpenRoads"
+  },
+  {
+    "objectID": "slides.html#datasets",
+    "href": "slides.html#datasets",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Datasets",
+    "text": "Datasets\n\nOrdnance Survey OpenRoads\nOS MasterMap Highways\nOS Mastermap Topography\nOpenStreetMap\nNRS (National Records of Scotland) data on travel to school\nNRS data on travel to work (Data Zone level)\nScottish Household Survey (SHS) data\nNational Travel Survey (NTS) data\nData from spatial interaction models (SIMs)"
+  },
+  {
+    "objectID": "slides.html#software",
+    "href": "slides.html#software",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Software",
+    "text": "Software\nCode is available and maintained at github.com/nptscot\n\nBackend written in R\nFrontend of NPT web application written in ‘vanilla’ JavaScript\nNPW (Network Planning Workspace) web application written in Rust and Svelte\nSee nptscot.github.io/npw\nmastermapr R package for importing MasterMap datasets\nosmactive R package for classifying OSM data\nanime Rust crate for network integration"
+  },
+  {
+    "objectID": "slides.html#key-functions",
+    "href": "slides.html#key-functions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Key functions",
+    "text": "Key functions\n\nget_pavement_widths() function to calculate pavement widths\nget_bus_routes() function to determine bus lanes\nclassify_cycle_infrastructure() function to classify cycle infrastructure"
+  },
+  {
+    "objectID": "slides.html#classifying-openstreetnetwork-ways",
+    "href": "slides.html#classifying-openstreetnetwork-ways",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Classifying OpenStreetNetwork ways",
+    "text": "Classifying OpenStreetNetwork ways\n\nFunctions including get_travel_network() and classify_cycle_infrastructure() from the osmactive package.\nClassify cycle infrastructure types based on the presence of cycle lanes, tracks, and other features."
+  },
+  {
+    "objectID": "slides.html#road-width-measurements",
+    "href": "slides.html#road-width-measurements",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Road width measurements",
+    "text": "Road width measurements\n\nCarriageway width and corridor width are key measurements.\nCarriageway width determines if infrastructure can fit within the carriageway.\nCorridor width captures carriageway plus roadside features.\nget_pavement_widths() function in osmactive package."
+  },
+  {
+    "objectID": "slides.html#minimum-cycle-track-and-buffer-widths",
+    "href": "slides.html#minimum-cycle-track-and-buffer-widths",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Minimum cycle track and buffer widths",
+    "text": "Minimum cycle track and buffer widths\n\nCorridor width determines if footway can be reallocated for cycle infrastructure.\nCycling by Design (CbD) guidance on widths and buffers.\nSpeed limit data from OSM used for buffer widths."
+  },
+  {
+    "objectID": "slides.html#bus-routes-and-road-traffic-assumptions",
+    "href": "slides.html#bus-routes-and-road-traffic-assumptions",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Bus routes and road traffic assumptions",
+    "text": "Bus routes and road traffic assumptions\n\nMinimum space requirements for motor traffic depend on bus routes and lanes.\nActive Travel England cross section check tool.\nget_bus_routes() function in osmactive package."
+  },
+  {
+    "objectID": "slides.html#network-planning-tool-for-scotland",
+    "href": "slides.html#network-planning-tool-for-scotland",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Network Planning Tool for Scotland",
+    "text": "Network Planning Tool for Scotland\n\nWeb application for strategic cycle network planning.\nKey components:\n\nRoute network layer\nInfrastructure and traffic layer\nStreet space layer\nCore network layer\nNetwork Planning Workspace (NPW) web application (https://nptscot.github.io/npw/)"
+  },
+  {
+    "objectID": "slides.html#street-space-layer",
+    "href": "slides.html#street-space-layer",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Street space layer",
+    "text": "Street space layer\n\nCategorises roads in accordance with Cycling by Design guidance.\nMethodology for classifying road spaces and cycle infrastructure."
+  },
+  {
+    "objectID": "slides.html#conclusion",
+    "href": "slides.html#conclusion",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nNPT is a cutting-edge web application for strategic cycle network planning.\nUnique feature: integration of multiple layers.\nNew street space layer: step change in access to combined carriageway and corridor widths."
+  },
+  {
+    "objectID": "slides.html#future-work",
+    "href": "slides.html#future-work",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Future work",
+    "text": "Future work\n\nImprove NPT by incorporating new datasets.\nDevelop context-specific classifications in osmactive package.\nSupport roll-out of methods in new places."
+  }
+]
