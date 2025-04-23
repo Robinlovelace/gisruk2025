@@ -236,10 +236,8 @@ Code is available and maintained at [github.com/nptscot](https://github.com/npts
 -   `get_bus_routes()` function to determine bus lanes
 -   `classify_cycle_infrastructure()` function to classify cycle infrastructure
 
-## Live demo
+## Live demo: getting active travel network data
 
-::::: columns
-::: {.column width="50%"}
 ```{r}
 #| include: false
 #| eval: false
@@ -253,22 +251,24 @@ library(tmap)
 #| eval: false
 #| echo: true
 remotes::install_github("nptscot/osmactive")
+library(osmactive)
 osm = get_travel_network("bristol")
 cycle_net = get_cycling_network(osm)
 drive_net = get_driving_network(osm)
 cycle_net = distance_to_road(cycle_net, drive_net)
 cycle_net = classify_cycle_infrastructure(cycle_net)
 ```
-:::
 
-::: {.column width="50%"}
+```{r}
+#| eval: false
+sf::write_sf(cycle_net, "cycle_network.geojson")
+```
+
 ```{r}
 #| label: plot
 #| eval: false
 plot_osm_tmap(cycle_net)
 ```
-:::
-:::::
 
 ![](images/paste-4.png)
 
