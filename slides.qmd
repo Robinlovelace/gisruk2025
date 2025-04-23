@@ -261,7 +261,11 @@ cycle_net = classify_cycle_infrastructure(cycle_net)
 
 ```{r}
 #| eval: false
-sf::write_sf(cycle_net, "cycle_network.geojson")
+sf::write_sf(cycle_net, "cycle_network.geojson", delete_dsn = TRUE)
+```
+
+```{r}
+cycle_net = sf::read_sf("cycle_network.geojson")
 ```
 
 ```{r}
@@ -271,6 +275,14 @@ plot_osm_tmap(cycle_net)
 ```
 
 ![](images/paste-4.png)
+
+## Integration with Geocomputation with R stack
+
+```{r}
+#| echo: true
+tmap::tmap_mode("view")
+plot_osm_tmap(cycle_net)
+```
 
 ## Road width measurements
 
