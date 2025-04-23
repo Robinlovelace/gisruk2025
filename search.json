@@ -70,25 +70,25 @@
     "text": "Key functions\n\nFunctions including get_travel_network() and classify_cycle_infrastructure() from the osmactive package.\nClassify cycle infrastructure types based on the presence of cycle lanes, tracks, and other features.\ndistance_to_road() function to calculate distances to roads.\nget_pavement_widths() function to calculate pavement widths\nget_bus_routes() function to determine bus lanes\nclassify_cycle_infrastructure() function to classify cycle infrastructure"
   },
   {
-    "objectID": "slides.html#live-demo",
-    "href": "slides.html#live-demo",
+    "objectID": "slides.html#live-demo-getting-active-travel-network-data",
+    "href": "slides.html#live-demo-getting-active-travel-network-data",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Live demo",
-    "text": "Live demo\n\n\n\nremotes::install_github(\"nptscot/osmactive\")\nosm = get_travel_network(\"bristol\")\ncycle_net = get_cycling_network(osm)\ndrive_net = get_driving_network(osm)\ncycle_net = distance_to_road(cycle_net, drive_net)\ncycle_net = classify_cycle_infrastructure(cycle_net)"
+    "section": "Live demo: getting active travel network data",
+    "text": "Live demo: getting active travel network data\n\nremotes::install_github(\"nptscot/osmactive\")\nlibrary(osmactive)\nosm = get_travel_network(\"bristol\")\ncycle_net = get_cycling_network(osm)\ndrive_net = get_driving_network(osm)\ncycle_net = distance_to_road(cycle_net, drive_net)\ncycle_net = classify_cycle_infrastructure(cycle_net)"
+  },
+  {
+    "objectID": "slides.html#integration-with-geocomputation-with-r-stack",
+    "href": "slides.html#integration-with-geocomputation-with-r-stack",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Integration with Geocomputation with R stack",
+    "text": "Integration with Geocomputation with R stack\n\ntmap::tmap_mode(\"view\")\nplot_osm_tmap(cycle_net)"
   },
   {
     "objectID": "slides.html#road-width-measurements",
     "href": "slides.html#road-width-measurements",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Road width measurements",
-    "text": "Road width measurements\n\nCarriageway width and corridor width are key measurements.\nCarriageway width determines if infrastructure can fit within the carriageway.\nCorridor width captures carriageway plus roadside features.\nget_pavement_widths() function in osmactive package."
-  },
-  {
-    "objectID": "slides.html#minimum-cycle-track-and-buffer-widths",
-    "href": "slides.html#minimum-cycle-track-and-buffer-widths",
-    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Minimum cycle track and buffer widths",
-    "text": "Minimum cycle track and buffer widths\n\nCorridor width determines if footway can be reallocated for cycle infrastructure.\nCycling by Design (CbD) guidance on widths and buffers.\nSpeed limit data from OSM used for buffer widths."
+    "text": "Road width measurements\n\nCarriageway width and corridor width are key measurements.\nCarriageway width determines if infrastructure can fit within the carriageway.\nCorridor width captures carriageway plus roadside features.\nCorridor width determines if footway can be reallocated for cycle infrastructure.\nCycling by Design (CbD) guidance on widths and buffers.\nSpeed limit data from OSM used for buffer widths."
   },
   {
     "objectID": "slides.html#bus-routes-and-road-traffic-assumptions",
@@ -102,21 +102,7 @@
     "href": "slides.html#network-planning-tool-for-scotland",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Network Planning Tool for Scotland",
-    "text": "Network Planning Tool for Scotland\n\nWeb application for strategic cycle network planning.\nKey components:\n\nRoute network layer\nInfrastructure and traffic layer\nStreet space layer\nCore network layer\nNetwork Planning Workspace (NPW) web application (https://nptscot.github.io/npw/)"
-  },
-  {
-    "objectID": "slides.html#street-space-layer",
-    "href": "slides.html#street-space-layer",
-    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Street space layer",
-    "text": "Street space layer\n\nCategorises roads in accordance with Cycling by Design guidance.\nMethodology for classifying road spaces and cycle infrastructure."
-  },
-  {
-    "objectID": "slides.html#conclusion",
-    "href": "slides.html#conclusion",
-    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Conclusion",
-    "text": "Conclusion\n\nNPT is a cutting-edge web application for strategic cycle network planning.\nUnique feature: integration of multiple layers.\nNew street space layer: step change in access to combined carriageway and corridor widths."
+    "text": "Network Planning Tool for Scotland\n\nWeb application for strategic cycle network planning available at npt.scot.\nKey components:\n\nRoute network layer\nExisting cycle network quality layer (requires data integration methods presented)\nStreet space layer (requires data integration methods presented)\nCore network layer\nResults feed into Network Planning Workspace (NPW) web application (https://nptscot.github.io/npw/)"
   },
   {
     "objectID": "slides.html#future-work",
