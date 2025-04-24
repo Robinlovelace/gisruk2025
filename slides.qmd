@@ -331,3 +331,13 @@ plot_osm_tmap(cycle_net)
 -   Improve NPT by incorporating new datasets.
 -   Develop context-specific classifications in `osmactive` package.
 -   Support roll-out of methods in new places.
+
+# Plugs
+
+Transport data mini-hack, 8th May:
+
+![](images/paste-6.png)
+
+Upcoming 2-day workshop on Data Science for Transport Planning (18th to 19th September):
+
+![](images/paste-5.png)
