@@ -248,7 +248,7 @@ library(tmap)
 
 ```{r}
 #| label: bristol
-#| eval: false
+#| eval: true
 #| echo: true
 remotes::install_github("nptscot/osmactive")
 library(osmactive)
