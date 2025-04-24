@@ -63,6 +63,13 @@
     "text": "Software\nCode is available and maintained at github.com/nptscot\n\nBackend written in R\nFrontend of NPT web application written in ‘vanilla’ JavaScript\nNPW (Network Planning Workspace) web application written in Rust and Svelte\nSee nptscot.github.io/npw\nmastermapr R package for importing MasterMap datasets\nosmactive R package for classifying OSM data\nanime Rust crate for network integration"
   },
   {
+    "objectID": "slides.html#anime-rust-crate",
+    "href": "slides.html#anime-rust-crate",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "anime Rust crate",
+    "text": "anime Rust crate\n\nSee github.com/JosiahParry"
+  },
+  {
     "objectID": "slides.html#key-functions",
     "href": "slides.html#key-functions",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
@@ -84,11 +91,46 @@
     "text": "Integration with Geocomputation with R stack\n\ntmap::tmap_mode(\"view\")\nplot_osm_tmap(cycle_net)"
   },
   {
+    "objectID": "slides.html#live-demo",
+    "href": "slides.html#live-demo",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Live demo",
+    "text": "Live demo\nSee www.npt.scot for live demo."
+  },
+  {
+    "objectID": "slides.html#future-work",
+    "href": "slides.html#future-work",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Future work",
+    "text": "Future work\n\nImprove NPT by incorporating new datasets.\nDevelop context-specific classifications in osmactive package.\nWork on the anime Rust crate and packages for ease of use (and paper)\nSupport roll-out of methods in new places.\nInterested? Get in touch!\n\nReproducible slides: robinlovelace.github.io/gisruk2025"
+  },
+  {
+    "objectID": "slides.html#transport-data-mini-hack-8th-may",
+    "href": "slides.html#transport-data-mini-hack-8th-may",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Transport data mini-hack, 8th May:",
+    "text": "Transport data mini-hack, 8th May:\nAfternoon event at the University of Leeds before inaugural lecture on transport data science.  See itsleeds.github.io for details.\n\nReproducible slides: robinlovelace.github.io/gisruk2025"
+  },
+  {
+    "objectID": "slides.html#want-to-learn-more",
+    "href": "slides.html#want-to-learn-more",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Want to learn more?",
+    "text": "Want to learn more?\nUpcoming 2-day workshop on Data Science for Transport Planning (18th to 19th September).  See itsleeds.github.io for details.\n\nReproducible slides: robinlovelace.github.io/gisruk2025"
+  },
+  {
     "objectID": "slides.html#road-width-measurements",
     "href": "slides.html#road-width-measurements",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Road width measurements",
-    "text": "Road width measurements\n\nCarriageway width and corridor width are key measurements.\nCarriageway width determines if infrastructure can fit within the carriageway.\nCorridor width captures carriageway plus roadside features.\nCorridor width determines if footway can be reallocated for cycle infrastructure.\nCycling by Design (CbD) guidance on widths and buffers.\nSpeed limit data from OSM used for buffer widths."
+    "text": "Road width measurements\n\nCarriageway width and corridor width are key measurements.\nCarriageway width determines if infrastructure can fit within the carriageway.\nCorridor width captures carriageway plus roadside features.\nget_pavement_widths() function in osmactive package."
+  },
+  {
+    "objectID": "slides.html#minimum-cycle-track-and-buffer-widths",
+    "href": "slides.html#minimum-cycle-track-and-buffer-widths",
+    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
+    "section": "Minimum cycle track and buffer widths",
+    "text": "Minimum cycle track and buffer widths\n\nCorridor width determines if footway can be reallocated for cycle infrastructure.\nCycling by Design (CbD) guidance on widths and buffers.\nSpeed limit data from OSM used for buffer widths."
   },
   {
     "objectID": "slides.html#bus-routes-and-road-traffic-assumptions",
@@ -96,19 +138,5 @@
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
     "section": "Bus routes and road traffic assumptions",
     "text": "Bus routes and road traffic assumptions\n\nMinimum space requirements for motor traffic depend on bus routes and lanes.\nActive Travel England cross section check tool.\nget_bus_routes() function in osmactive package."
-  },
-  {
-    "objectID": "slides.html#network-planning-tool-for-scotland",
-    "href": "slides.html#network-planning-tool-for-scotland",
-    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Network Planning Tool for Scotland",
-    "text": "Network Planning Tool for Scotland\n\nWeb application for strategic cycle network planning available at npt.scot.\nKey components:\n\nRoute network layer\nExisting cycle network quality layer (requires data integration methods presented)\nStreet space layer (requires data integration methods presented)\nCore network layer\nResults feed into Network Planning Workspace (NPW) web application (https://nptscot.github.io/npw/)"
-  },
-  {
-    "objectID": "slides.html#future-work",
-    "href": "slides.html#future-work",
-    "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Future work",
-    "text": "Future work\n\nImprove NPT by incorporating new datasets.\nDevelop context-specific classifications in osmactive package.\nSupport roll-out of methods in new places."
   }
 ]
