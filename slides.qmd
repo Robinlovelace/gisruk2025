@@ -38,31 +38,8 @@ date: last-modified
 bibliography: references.bib
 execute: 
   echo: false
+  eval: true
 ---
-
-````{=html}
-<!-- ```bash
-#| eval: false
-# Check screenshots on Ubuntu
-ls -l /home/robin/Videos/Screencasts/
-
-
-
-ls -l ~/Videos/Screencasts/
-ffmpeg -i '/home/robin/Videos/Screencasts/Screencast from 2025-04-22 21-44-47.webm' -vf "fps=10,scale=800:-1:flags=lanczos" -c:v gif images/screencast-clos.gif
-# copy the webm to clos-demo/
-cp '/home/robin/Videos/Screencasts/Screencast from 2025-04-22 21-44-47.webm' clos-demo/clos-demo.webm
-cp -Rv ~/Downloads/colored-particles colored-particles
-``` -->
-````
-
-```{r}
-#| eval: false
-f = fs::dir_ls("~/Videos/Screencasts/", regexp = "2025-04-22")
-
-```
-
-<!-- # Introduction {background-iframe="clos-demo/index.html"} -->
 
 ## Abstract
 
@@ -76,19 +53,9 @@ The results are showcased in a web application hosted at www.npt.scot, demonstra
 network analysis, transport planning, OpenStreetMap, active travel, reproducible research
 ```
 
-<!-- <iframe src="https://nptscot.github.io/" width="800" height="600"></iframe> -->
-
-```{=html}
-<!-- # Introduction
-
-## Active travel and street networks
-
--   Active travel is an accessible and cost-effective way to replace short car trips and make transport systems more sustainable.
--   Most active travel models rely on oversimplified street representations, neglecting key factors such as footway widths.
--   Need for new methods for classifying street networks for active travel, integrating diverse datasets. -->
-```
-
 # Introduction
+
+([W](https://photos.lovelaces.org/share/eOsyK8ibSUKMgnCJFaP_DF76l4kKrMvDhQXidzvbh8KbOyfTawwZNREMN8YUQvUuV4s)hy work on this?)
 
 ## Network Planning Tool (NPT) for Scotland
 
@@ -233,7 +200,6 @@ Code is available and maintained at [github.com/nptscot](https://github.com/npts
 
 See [github.com/JosiahParry](https://github.com/JosiahParry/anime)
 
-
 ## Key functions
 
 -   Functions including `get_travel_network()` and `classify_cycle_infrastructure()` from the `osmactive` package.
@@ -282,15 +248,22 @@ cycle_net = sf::read_sf("cycle_network.geojson")
 plot_osm_tmap(cycle_net)
 ```
 
-![](images/paste-4.png)
+![](images/paste-9.png)
 
-## Integration with Geocomputation with R stack
+## Interactive plotting
+
+Via Geocomputation with R 'stack' (tmap package, mapgl version in progress)
+
+See [github.com/nptscot/osmactive/releases](https://github.com/nptscot/osmactive/releases/download/v0.1/cycle_net_bristol.html) for interactive version
 
 ```{r}
-#| echo: true
+#| echo: false
+#| eval: false
 tmap::tmap_mode("view")
 plot_osm_tmap(cycle_net)
 ```
+
+![](images/paste-8.png)
 
 ```{=html}
 <!-- # Results
