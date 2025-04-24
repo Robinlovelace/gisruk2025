@@ -84,11 +84,11 @@
     "text": "Live demo: getting active travel network data\n\nremotes::install_github(\"nptscot/osmactive\")\nlibrary(osmactive)\nosm = get_travel_network(\"bristol\")\ncycle_net = get_cycling_network(osm)\ndrive_net = get_driving_network(osm)\ncycle_net = distance_to_road(cycle_net, drive_net)\ncycle_net = classify_cycle_infrastructure(cycle_net)"
   },
   {
-    "objectID": "slides.html#integration-with-geocomputation-with-r-stack",
-    "href": "slides.html#integration-with-geocomputation-with-r-stack",
+    "objectID": "slides.html#interactive-plotting",
+    "href": "slides.html#interactive-plotting",
     "title": "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning",
-    "section": "Integration with Geocomputation with R stack",
-    "text": "Integration with Geocomputation with R stack\n\ntmap::tmap_mode(\"view\")\nplot_osm_tmap(cycle_net)"
+    "section": "Interactive plotting",
+    "text": "Interactive plotting\nVia Geocomputation with R ‘stack’ (tmap package, mapgl version in progress)\nSee github.com/nptscot/osmactive/releases for interactive version"
   },
   {
     "objectID": "slides.html#live-demo",
