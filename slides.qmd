@@ -1,6 +1,6 @@
 ---
 title: "Mapping, classifying, and integrating diverse street network datasets: new methods and open source tools for active travel planning"
-subtitle: GISRUK 2025
+subtitle: "GISRUK 2025 (Reproducible slides: [robinlovelace.github.io/gisruk2025](https://robinlovelace.github.io/gisruk2025). Source code: [github.com](https://github.com/robinlovelace/gisruk2025))"
 format: 
   clean-revealjs:
     self-contained: true
@@ -227,6 +227,13 @@ Code is available and maintained at [github.com/nptscot](https://github.com/npts
 
 -   `anime` Rust crate for network integration
 
+## `anime` Rust crate
+
+![](images/paste-7.png)
+
+See [github.com/JosiahParry](https://github.com/JosiahParry/anime)
+
+
 ## Key functions
 
 -   Functions including `get_travel_network()` and `classify_cycle_infrastructure()` from the `osmactive` package.
@@ -240,7 +247,7 @@ Code is available and maintained at [github.com/nptscot](https://github.com/npts
 
 ```{r}
 #| include: false
-#| eval: false
+#| eval: true
 library(dplyr)
 library(osmactive)
 library(tmap)
@@ -248,8 +255,9 @@ library(tmap)
 
 ```{r}
 #| label: bristol
-#| eval: true
+#| eval: false
 #| echo: true
+#| results: hide
 remotes::install_github("nptscot/osmactive")
 library(osmactive)
 osm = get_travel_network("bristol")
@@ -284,26 +292,8 @@ tmap::tmap_mode("view")
 plot_osm_tmap(cycle_net)
 ```
 
-## Road width measurements
-
--   Carriageway width and corridor width are key measurements.
--   Carriageway width determines if infrastructure can fit within the carriageway.
--   Corridor width captures carriageway plus roadside features.
--   `get_pavement_widths()` function in `osmactive` package.
-
-## Minimum cycle track and buffer widths
-
--   Corridor width determines if footway can be reallocated for cycle infrastructure.
--   Cycling by Design (CbD) guidance on widths and buffers.
--   Speed limit data from OSM used for buffer widths.
-
-## Bus routes and road traffic assumptions
-
--   Minimum space requirements for motor traffic depend on bus routes and lanes.
--   Active Travel England cross section check tool.
--   `get_bus_routes()` function in `osmactive` package.
-
-# Results
+```{=html}
+<!-- # Results
 
 ## Network Planning Tool for Scotland
 
@@ -324,20 +314,64 @@ plot_osm_tmap(cycle_net)
 
 -   NPT is a cutting-edge web application for strategic cycle network planning.
 -   Unique feature: integration of multiple layers.
--   New street space layer: step change in access to combined carriageway and corridor widths.
+-   New street space layer: step change in access to combined carriageway and corridor widths. -->
+```
+
+## Live demo
+
+See [www.npt.scot](https://www.npt.scot) for live demo.
+
+<!-- gif: -->
+
+![](images/screencast-clos.gif)
 
 ## Future work
 
 -   Improve NPT by incorporating new datasets.
 -   Develop context-specific classifications in `osmactive` package.
+-   Work on the `anime` Rust crate and packages for ease of use (and paper)
 -   Support roll-out of methods in new places.
+-   Interested? Get in touch!
+
+Reproducible slides: [robinlovelace.github.io/gisruk2025](https://robinlovelace.github.io/gisruk2025)
 
 # Plugs
 
-Transport data mini-hack, 8th May:
+## Transport data mini-hack, 8th May:
+
+Afternoon event at the University of Leeds before inaugural lecture on transport data science.
+<!-- https://itsleeds.github.io/tds/minihack-transport-data.html --> See [itsleeds.github.io](https://itsleeds.github.io/tds/minihack-transport-data.html) for details.
 
 ![](images/paste-6.png)
 
-Upcoming 2-day workshop on Data Science for Transport Planning (18th to 19th September):
+Reproducible slides: [robinlovelace.github.io/gisruk2025](https://robinlovelace.github.io/gisruk2025)
+
+## Want to learn more?
+
+Upcoming 2-day workshop on Data Science for Transport Planning (18th to 19th September).
+<!-- https://itsleeds.github.io/tds/dstp.html --> See [itsleeds.github.io](https://itsleeds.github.io/tds/dstp.html) for details.
 
 ![](images/paste-5.png)
+
+Reproducible slides: [robinlovelace.github.io/gisruk2025](https://robinlovelace.github.io/gisruk2025)
+
+# Details
+
+## Road width measurements
+
+-   Carriageway width and corridor width are key measurements.
+-   Carriageway width determines if infrastructure can fit within the carriageway.
+-   Corridor width captures carriageway plus roadside features.
+-   `get_pavement_widths()` function in `osmactive` package.
+
+## Minimum cycle track and buffer widths
+
+-   Corridor width determines if footway can be reallocated for cycle infrastructure.
+-   Cycling by Design (CbD) guidance on widths and buffers.
+-   Speed limit data from OSM used for buffer widths.
+
+## Bus routes and road traffic assumptions
+
+-   Minimum space requirements for motor traffic depend on bus routes and lanes.
+-   Active Travel England cross section check tool.
+-   `get_bus_routes()` function in `osmactive` package.
