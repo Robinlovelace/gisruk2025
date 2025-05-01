@@ -97,6 +97,8 @@ Available at [transport.gov.scot](https://www.transport.gov.scot/media/50323/cyc
 
 See live demo at [npt.scot](https://www.npt.scot).
 
+<span style="font-size: small;">Contains OS data © Crown copyright and database rights 2025 OS licence number 100046668.</span>
+
 ![](images/paste-3.png)
 
 ## Key technical challenges
